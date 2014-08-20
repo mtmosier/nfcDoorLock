@@ -11,7 +11,7 @@ This code uses the Adafruit NFC shield library located at https://github.com/ada
 Hardware
 ========
 
-I used an Arduino Uno, [Adafruit NFC Shield](https://www.adafruit.com/products/789), and a [Lock-style Solenoid](https://www.adafruit.com/products/1512).  Check the [schematic](schedmatic.png) file for more info.
+I used an Arduino Uno, [Adafruit NFC Shield](https://www.adafruit.com/products/789), and a [Lock-style Solenoid](https://www.adafruit.com/products/1512).  Check the [schematic](schematic.png) file for more info.
 
 Installation
 ============
