@@ -1,14 +1,14 @@
 #include <Wire.h>
 #include <Adafruit_NFCShield_I2C.h>
 
-#define IRQ            (2)
-#define RESET          (3)  // Not connected by default on the NFC Shield
-#define VALID_ID_COUNT  4
+#define IRQ             2
+#define RESET           3  // Not connected by default on the NFC Shield
+#define VALID_ID_COUNT  2
 
-const int greenLedPin =  7;  //  LOW is on
-const int redLedPin = 12;  //  LOW is on
-const int lockPin = 8;  //  HIGH is open
-const int timeOpenInMs = 5000;
+const int greenLedPin            =    7;  //  LOW is on
+const int redLedPin              =   12;  //  LOW is on
+const int lockPin                =    8;  //  HIGH is open
+const int timeOpenInMs           = 5000;
 const int resetTimeOnBadReadInMs = 3000;
 
 
@@ -20,10 +20,8 @@ typedef struct
 
 //  Replace with the ids of your nfc tags
 RingId validIds[VALID_ID_COUNT] = {
-  { 0x00, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff },
-  { 0x01, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff },
-  { 0x02, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff },
-  { 0x03, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff }
+    { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },
+    { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01 }
 };
 
 
