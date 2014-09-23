@@ -13,6 +13,7 @@ Hardware
 
 I used an Arduino Uno, [Adafruit NFC Shield](https://www.adafruit.com/products/789), and a [Lock-style Solenoid](https://www.adafruit.com/products/1512).  Check the [schematic](schematic.png) or [fritzing](fritzing.png) file for more info.
 
+
 Installation
 ============
 
