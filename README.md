@@ -18,3 +18,9 @@ Installation
 
 Open the file in your arduino dev environment, change the NFC tag IDS, and compile/upload it to your board.
 
+
+Further Information
+===================
+
+Pictures and description can be found at [mtmosier.com](http://mtmosier.com/80-arduino/72-nfcdoorlock).
+
