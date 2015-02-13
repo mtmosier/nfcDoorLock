@@ -20,7 +20,7 @@ typedef struct
 
 //  Replace with the ids of your nfc tags
 RingId validIds[VALID_ID_COUNT] = {
-    { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },
+    { 0x04, 0xcd, 0x74, 0x42, 0x94, 0x33, 0x80 },  //  Mike ring 1 transparent
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01 }
 };
 
@@ -29,6 +29,9 @@ Adafruit_NFCShield_I2C nfc(IRQ, RESET);
 
 void setup(void) {
   nfc.begin();
+
+  Serial.begin(9600);
+  Serial.println("Testing NFC Solenoid Unlock Code");
 
   pinMode(greenLedPin, OUTPUT);
   pinMode(redLedPin, OUTPUT);
@@ -40,6 +43,7 @@ void setup(void) {
 
   uint32_t versiondata = nfc.getFirmwareVersion();
   if (! versiondata) {
+    Serial.println("NFC Shield not recognized");
     while (1); // halt
   }
 
@@ -69,12 +73,16 @@ void loop(void) {
     }
 
     if (found) {
+      Serial.println("NFC Tag detected, confirmed as valid");
+
       digitalWrite(greenLedPin, LOW);   // turn the green LED on
       digitalWrite(lockPin, HIGH);  // open the door lock
       delay(timeOpenInMs);
       digitalWrite(lockPin, LOW);   // close the door lock
       digitalWrite(greenLedPin, HIGH);  // turn the green LED off
     } else {
+      Serial.println("NFC Tag detected, but is not in the list of valid IDs");
+
       digitalWrite(redLedPin, LOW);  // turn the red LED on
       delay(resetTimeOnBadReadInMs);
       digitalWrite(redLedPin, HIGH); // turn the red LED off
